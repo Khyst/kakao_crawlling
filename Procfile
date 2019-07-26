@@ -1,1 +1,1 @@
-web: gunicorn bp.wsgi --log-file -
+web: gunicorn bkogProj.wsgi --log-file -
