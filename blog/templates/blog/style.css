@@ -1,0 +1,84 @@
+@import "http://fonts.googleapis.com/earlyaccess/nanumgothic.css";
+
+*{
+  /* font-family: 'nanumgothic' */
+}
+
+*{
+  color: #000000;
+  text-decoration: none;
+}
+
+table{
+  width: 90%;
+  height: auto;
+  text-align: center;
+  }
+
+#mainNav{
+  color: black !important;
+  font-weight: bolder;
+}
+
+nav:hover{
+  color: #bbbbbb;
+  text-decoration: none;
+  cursor: auto;
+}
+
+input:hover{
+  cursor: auto;
+}
+
+nav{
+  border-bottom: solid 3px black;
+  color: black;
+  background-color: white;
+}
+
+#SNS a.list-group-item{
+  color : white;
+  font-weight: bold
+}
+
+/* info_table 반응형으로 출력 */
+@media screen and (max-width: 720px) { #info_table { display: none; } }
+@media screen and (min-width: 720px) { #info_contents { display: none;}}
+
+.list-group{
+  border: none;
+}
+
+.head{
+  background-image: url("http://khyst.co.kr/img/background.jpg");
+  background-color: rgba( 255, 255, 255, 0.5 );
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.8;
+}
+
+.thirdClass{
+  background-color: #FAFAFA;
+  /*padding: 10px;*/
+}
+
+footer{
+  background-color: #a9a9a9;
+  color: #2f4f4f;
+  opacity: 0.7;
+}
+
+.Paragraph{
+  /*margin-top: 60px;*/
+  /*color: white;*/
+  /*margin-left: 35px;*/
+  /*text-align: center;*/
+}
+
+.jumbotron{
+  background-color: rgba( 255, 255, 255, 0.5 ) !important;
+}
+
+.header{
+  background-color: rgba(119, 206, 225, 1);
+}

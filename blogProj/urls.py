@@ -25,6 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', blog.views.home, name='home'), # views를 import함
     path('<int:blog_id>/', blog.views.detail, name='detail'),
+    path('blog/', blog.views.blog, name='blog'),
     path('new/', blog.views.new, name='new'),
     path('create/', blog.views.create, name='create'),
     path('portfolio/', portfolio.views.portfolio, name='portfolio'),
