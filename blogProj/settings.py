@@ -129,7 +129,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'portfolio', 'static')
+    os.path.join(BASE_DIR, 'portfolio', 'static'),
+    os.path.join(BASE_DIR, 'blog', 'static'),
 ]
 # static 파일들을 사용하기 위해, 위치 지정
 

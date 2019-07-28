@@ -9,31 +9,19 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <link rel="stylesheet" href="{% static 'attachment.css' %}">
         <title>Khyst</title>
         <!-- bootstrap4 CSS CDN 부분 -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
             crossorigin="anonymous">
-
-        <style>
-            #top {
-                background-repeat: no-repeat;
-                width: 100%;
-                height: 488px;
-                display: block;
-                margin: 0 auto;
-            }
-        </style>
-
     </head>
 
     <body>
-        {% load staticfiles %}
 
-        <div id="lion" src="{% static 'Koreapas.png' %}" style="width:100px; height:100px"> </div>
+        <div id="lion" style=""> </div>
 
         <main role="main">
-            <div>
+            <div class="top_cover">
                 <div id="top" class="center-block" style="background-image: url({% static 'kakao_top.png' %});">
 
                 </div>
@@ -65,12 +53,37 @@
         </main>
     
         <footer class="text-muted">
-            <div class="container">
-                <p>
-                <span class='col-4'> Album example is &copy; Bootstrap </span>
-                <span class='col-4 text-center'> Source from <strong> KAKAO FRIENDS </strong> </span>
-                <span class='col-4 text-right'> apllicated by KHYST </span>
-                </p>
+        <br>
+            <div class="row">
+                <div class="col-sm-2 text-center pl-4"> 
+                    <h5> Copyright &copy; 2019 </h5>
+                    <h5> yonghun, Kim ( 김용훈 ) </h5>
+                    <p> Computer Engineering </p>
+                    <p> Colleage Student 1 grade </p>
+                </div>
+                <div class="col-sm-6">
+                    <p>
+                    Album example is &copy; Bootstrap
+                    <span class='col-4 text-center'> // Source from <strong> KAKAO FRIENDS </strong> </span>
+                    <span class='col-4 text-right'> ( apllicated by KHYST ) </span>
+                    </p>
+                    <p> KAKAO FIRENDS BRAND SITE <a href="https://store.kakaofriends.com/kr/brand/home"> https://store.kakaofriends.com/kr/brand/home </a> </p>
+                    <p> INTRO KHYST <a href="http://khyst.co.kr"> http://khyst.co.kr </a> </p>
+                    <p> Scrawlling through BeautifulSoup4, requests Package </p>
+
+                </div>
+                <div class="col-sm-4">
+                    <div class="list-group" id="SNS">
+                        <a href="#" class="list-group-item" style="background-color:#3b5998;" onclick="redirect"> 
+                        <img src="{% static 'fb.png' %}" alt="" width="20px" height="20px"> &nbsp Facebook &nbsp / &nbsp kyh9432242@naver.com  </a>
+
+                        <a href="#" class="list-group-item" style="background-color:#2DB400;"> 
+                        <img src="{% static 'naver.png' %}" alt="" width="20px" height="20px"> &nbsp Naver &nbsp / &nbsp kyh9432242@naver.com </a>
+
+                        <a href="#" class="list-group-item" style="background-color:#808080;"> 
+                        <img src="{% static 'github.png' %}" alt="" width="20px" height="20px"> &nbsp Github &nbsp / &nbsp kyh48752242@gmail.com </a>
+                    </div>
+                </div>
             </div>
         </footer>
 
