@@ -1,37 +1,45 @@
-    {% extends 'base.html' %}
+{% extends 'base.html' %}
 
-    {% block content %}
-    <div class="container">
-        {% for blog in posts %}
-        <br>
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">{{blog.title}}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">{{blog.pub_date}}</h6>
-                <p class="card-text">{{blog.summary}}</p>
-                <a href="{%url 'detail' blog.id%}" class="card-link">...more</a>
-            </div>
-        </div>
-        {% endfor %}
+{% block content %}
+<div class="row">
+  <div class="col-lg-8 col-md-10 mx-auto">
+    {% for blog in posts %}
+    <div class="post-preview">
+      <a href="post.html">
+        <h2 class="post-title">
+          {{ blog.title }}
+        </h2>
+        <h3 class="post-subtitle">
+          {{ blog.body }}
+        </h3>
+      </a>
+      <p class="post-meta"> {{blog.pub_date}} </p>
     </div>
+    <hr>
+    {% endfor %}
+
+    <!-- Pager -->
+    <div class="clearfix">
+      <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+
+      {% if posts.has_previous %}
+     <a href="?page=1"> First </a>
+     <a href="?page={{posts.previous_page_number}}"> Prev </a>
+     {% endif %}
 
 
-    {% if posts.has_previous %}
-    <a href="?page=1"> First </a>
-    <a href="?page={{posts.previous_page_number}}"> Prev </a>
-    {% endif %}
-    
+     <span> {{ posts.number }} </span>
+     <span> of </span>
+     <span> {{ posts.paginator.num_pages }} </span>
 
-    <span> {{ posts.number }} </span>
-    <span> of </span>
-    <span> {{ posts.paginator.num_pages }} </span>
+     {% if posts.has_next %}
+     <a href="?page={{posts.prev_page_number}}"> Prev </a>
+     <a href="?page={{posts.next_page_number}}"> Next </a>
+     <a href="?page={{posts.paginator.num_pages}}"> Last </a>
+     {% endif %}
 
-    {% if posts.has_next %}
-    <a href="?page={{posts.prev_page_number}}"> Prev </a>
-    <a href="?page={{posts.next_page_number}}"> Next </a>
-    <a href="?page={{posts.paginator.num_pages}}"> Last </a>
-    {% endif %}
+    </div>
+  </div>
+</div>
 
-
-
-    {% endblock %}
+{% endblock %}
