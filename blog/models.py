@@ -7,3 +7,8 @@ class Blog(models.Model):
     pub_date = models.DateTimeField('date published')
     body = models.TextField()
 
+    def summary(self):
+        return self.body[:100]
+    
+    def __str__(self):
+        return self.title

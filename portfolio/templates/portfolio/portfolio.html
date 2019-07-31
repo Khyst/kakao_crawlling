@@ -65,22 +65,37 @@
                     <p>
                     Album example is &copy; Bootstrap
                     <span class='col-4 text-center'> // Source from <strong> KAKAO FRIENDS </strong> </span>
-                    <span class='col-4 text-right'> ( apllicated by KHYST ) </span>
+                    <span class='col-4 text-right'> ( apllicated by KHY ) </span>
                     </p>
                     <p> KAKAO FIRENDS BRAND SITE <a href="https://store.kakaofriends.com/kr/brand/home"> https://store.kakaofriends.com/kr/brand/home </a> </p>
                     <p> INTRO KHYST <a href="http://khyst.co.kr"> http://khyst.co.kr </a> </p>
-                    <p> Scrawlling through BeautifulSoup4, requests Package </p>
+                    <p> Crawlling through BeautifulSoup4, requests Package </p>
 
                 </div>
+                
+                <script>
+                    function fAssign() {
+                        window.location.assign("https://www.facebook.com/profile.php?id=100009362050399");
+                    }
+                    function nAssign(){
+                        window.location.assign("https://kyh9432242.blog.me");
+                    }
+                    function gAssign(){
+                        window.location.assign(
+                            "https://github.com/Khyst?tab=repositories"
+                        )
+                    }
+                </script>
+
                 <div class="col-sm-4">
                     <div class="list-group" id="SNS">
-                        <a href="#" class="list-group-item" style="background-color:#3b5998;" onclick="redirect"> 
+                        <a href="#" class="list-group-item" style="background-color:#3b5998;" onclick="fAssign()"> 
                         <img src="{% static 'fb.png' %}" alt="" width="20px" height="20px"> &nbsp Facebook &nbsp / &nbsp kyh9432242@naver.com  </a>
 
-                        <a href="#" class="list-group-item" style="background-color:#2DB400;"> 
+                        <a href="#" class="list-group-item" style="background-color:#2DB400;" onclick="nAssign()"> 
                         <img src="{% static 'naver.png' %}" alt="" width="20px" height="20px"> &nbsp Naver &nbsp / &nbsp kyh9432242@naver.com </a>
 
-                        <a href="#" class="list-group-item" style="background-color:#808080;"> 
+                        <a href="#" class="list-group-item" style="background-color:#808080;" onclick="gAssign()"> 
                         <img src="{% static 'github.png' %}" alt="" width="20px" height="20px"> &nbsp Github &nbsp / &nbsp kyh48752242@gmail.com </a>
                     </div>
                 </div>

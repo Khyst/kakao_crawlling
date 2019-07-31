@@ -71,6 +71,12 @@
         color: #ccd1d9;
         font-size: 10px;
       }
+
+      .progress-bar {
+        width : 0px;
+        transition: all 0.3s linear;
+      }
+
     </style>
 
     <!--<script type="text/javascript">
@@ -283,6 +289,16 @@
     </div>
 
     <!--Contents Container-->
+    <div id="target1">스크롤 액션이 나오는 타이밍</div>
+    </body>
+
+    <script>
+    $('#more').waypoint(function() {
+        $('#more').addClass('animated fadeInDown');
+    }, { offset: '100%' });
+    </script>
+
+
     <div class="container-fluid" style="background-color: rgba(129,129,129,0.3); padding-bottom:20px" id="more">
       <div class="container">
         <h2> Programming Learning Progress </h2>
@@ -525,6 +541,20 @@
       </div>
     </div>
 
+     <script>
+        function fAssign() {
+            window.location.assign("https://www.facebook.com/profile.php?id=100009362050399");
+        }
+        function nAssign(){
+            window.location.assign("https://kyh9432242.blog.me");
+        }
+        function gAssign(){
+            window.location.assign(
+                "https://github.com/Khyst?tab=repositories"
+            )
+        }
+    </script>
+
 
     <footer style="color: #000001">
       <div class="container">
@@ -543,9 +573,9 @@
           <div class="col-sm-4">
             <h4 style="text-align:center"> SNS </h4>
             <div class="list-group" id="SNS">
-              <a href="#" class="list-group-item" style="background-color:#3b5998;"> <img src="http://khyst.co.kr/img/fb.png" alt="" width="20px" height="20px"> &nbsp Facebook &nbsp / &nbsp kyh9432242@naver.com  </a>
-              <a href="#" class="list-group-item" style="background-color:#2DB400;"> <img src="http://khyst.co.kr/img/naver.png" alt="" width="20px" height="20px"> &nbsp Naver &nbsp / &nbsp kyh9432242@naver.com </a>
-              <a href="#" class="list-group-item" style="background-color:#808080;"> <img src="http://khyst.co.kr/img/github.png" alt="" width="20px" height="20px"> &nbsp Github &nbsp / &nbsp kyh48752242@gmail.com </a>
+              <a href="https://www.facebook.com/profile.php?id=100009362050399" class="list-group-item" style="background-color:#3b5998;"> <img src="http://khyst.co.kr/img/fb.png" alt="" width="20px" height="20px"> &nbsp Facebook &nbsp / &nbsp kyh9432242@naver.com  </a>
+              <a href="https://kyh9432242.blog.me" class="list-group-item" style="background-color:#2DB400;"> <img src="http://khyst.co.kr/img/naver.png" alt="" width="20px" height="20px"> &nbsp Naver &nbsp / &nbsp kyh9432242@naver.com </a>
+              <a href="https://github.com/Khyst?tab=repositories" class="list-group-item" style="background-color:#808080;"> <img src="http://khyst.co.kr/img/github.png" alt="" width="20px" height="20px"> &nbsp Github &nbsp / &nbsp kyh48752242@gmail.com </a>
             </div>
           </div>
           <div class="col-sm-2">
