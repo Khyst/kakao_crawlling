@@ -1,15 +1,108 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <form action="{% url 'create' %}">
-        <h4>제목: </h4>
-        <input type="text" name="title">
-        <br>
-        <br>
-        <h4>본문: </h4>
-        <textarea cols=40 rows=10 name="body"></textarea>
-        <br>
-        <br>
-        <input class="btn btn-dark" type="submit" value="제출하기">
+    <form action="{% url 'create' %}" class="newPost">
+        <div>
+            
+            <div class="input-form">
+                <div class="row">
+                    <div class="inputTitle h5 col-1"> Title: </div>
+                    <div class="inputContent col-11">
+                        <input type="text" name="title">
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="input-form">
+                <div class="row">
+                    <div class="inputTitle h5 col-1"> #Hashtag: </div>
+                    <div class="inputContent col-11">
+                        <input type="text" name="hash" placeholder=" #Khyst #블로그 #Webdevelop" disabled/>
+
+                        <!-- 자동 엔터 막기 -->
+                        <!--<input type="text" name="test" onkeypress="if(event.keyCode==13) {실행할 함수명(); return false;}">--> 
+                    </div>
+                </div>
+            </div>
+            
+            <div class="input-form">
+                <div class="row">
+                    <div class="inputTitle h5 col-2" style="height: auto;"> 첨부 파일: </div>
+                    <div class="inputContent col-4">
+                        <!-- style="border: 1px solid black; border-width:1px; -->
+                    </div>
+                    <div class="inputTitle h5 col-2" style="height: auto;"> 이모티콘: </div>
+
+                    <div class="inputContent col-4">
+
+                    </div>
+                </div>
+            </div>
+
+
+            <hr size="3">
+
+            <div class="input-form">
+                <div class="row">
+                </div>
+                <div class="inputContent">
+                    <textarea id="editor" name="body"></textarea>
+                    <!--<textarea cols=80 rows=10 name="body" id="#editor"></textarea>-->
+                </div>
+            </div>
+
+            <div class="row" id="send">
+                <div class="col-4">
+                    <input class="btn btn-dark" type="submit" style="width:100%" value="제출하기">
+                </div>
+
+                <div class="col-4">
+                    <div class="btn btn-danger" style="width:100%"> 취소하기 </div>
+                </div>
+
+                <div class="col-4">
+                    <div class="btn btn-outline-success" style="width:100%"> 임시저장 </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="height:100px;">
+        </div>
     </form>
+
+    {% load staticfiles %}
+
+    <script src="{% static 'ckeditor.js' %}"></script>
+
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#editor' ), { 
+            } )
+            .then( editor => {
+                window.editor = editor;
+            } )
+            .catch( err => {
+                console.error( err.stack );
+            } )
+        
+        
+        var editor = CKEDITOR.replace( '#editor' );
+
+        // ---------------------- !!ERROR!! 수정 필요 ----------------------
+        //editor.resize($(div).width(), '900px');
+        // The height value now applies to the editing area.
+        //editor.resize( '100%', '350', true )
+
+        //var div = document.getElementById('editor');
+
+        /*CKEDITOR.replace('#editor'), {  
+            height : 250;
+        } );*/
+        // ---------------------- !!ERROR!! 수정 필요 ----------------------
+
+
+
+
+    </script>
 {% endblock %}

@@ -13,7 +13,7 @@ def home(request):
     blog_list = Blog.objects.all()
 
     # 블로그 객체 세 개를 한 페이지로 자르기
-    paginator = Paginator(blog_list, 2)
+    paginator = Paginator(blog_list, 5)
 
     # request된 페이지가 뭔지를 알아내고 ( requset페이지를 변수에 담아냄 )
     page = request.GET.get('page')
@@ -23,7 +23,7 @@ def home(request):
 
     return render(request, 'blog/home.html',
     { 'blogs':blogs , 'posts':posts }) # blogs (object)를 전달
-    
+
 def detail(request, blog_id):
     blog_detail = get_object_or_404(Blog, pk=blog_id)
     return render(request, 'blog/detail.html', {'blog':blog_detail})

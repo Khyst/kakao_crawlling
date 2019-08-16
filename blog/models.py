@@ -1,6 +1,5 @@
 from django.db import models
-from faker import Faker
-# 
+ 
 # Create your models here.
 class Blog(models.Model):
     title = models.CharField(max_length=200)

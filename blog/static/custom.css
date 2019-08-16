@@ -1,0 +1,23 @@
+.inputContent input{
+    width: 100%;
+}
+
+
+.inputContent textarea{
+    width: 100%;
+}
+
+.input-form{
+    margin-bottom: 20px;
+}
+
+#send input{
+    width:80%;
+}
+/*
+.inputTitle{
+    width: 25%;
+}
+.inputContent{
+    width: 75%;
+}*/
