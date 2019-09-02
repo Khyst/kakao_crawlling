@@ -24,7 +24,7 @@ def imageCrawlling(request):
     #portfolios.image("name", content)
     portfolios.image.save("name", content,save=True)"""
 
-    year = 2017
+    year = 2019
 
     while year <= 2019:
         for j in range(1,12):
