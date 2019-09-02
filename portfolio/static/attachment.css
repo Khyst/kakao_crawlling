@@ -23,6 +23,8 @@
     width: 100px; 
     height:100px;
     background-image: url('Koreapas.png'); 
+    cursor:grab;
+
 }
 
 .list-group {
