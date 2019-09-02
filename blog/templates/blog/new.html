@@ -74,21 +74,17 @@
     {% load staticfiles %}
 
     <script src="{% static 'ckeditor.js' %}"></script>
+	
+    <script src="{%static 'config.js' %}"> </script>
 
     <script>
-        ClassicEditor
-            .create( document.querySelector( '#editor' ), { 
-            } )
-            .then( editor => {
-                window.editor = editor;
-            } )
-            .catch( err => {
-                console.error( err.stack );
-            } )
         
-        
-        var editor = CKEDITOR.replace( '#editor' );
+        //initSample();
 
+        var editor = CKEDITOR.replace( '#editor' ,
+        {height : 500});
+
+    
         // ---------------------- !!ERROR!! 수정 필요 ----------------------
         //editor.resize($(div).width(), '900px');
         // The height value now applies to the editing area.
@@ -105,4 +101,6 @@
 
 
     </script>
+
+
 {% endblock %}

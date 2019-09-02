@@ -17,10 +17,20 @@
     </head>
 
     <body>
+        <script> 
+            function startImageCrawlling(){
 
-        <div id="lion" style=""> </div>
+                window.location.assign(" {% url 'imgCrwalling' %} ")
+            }
+        </script>
+
+
+        <div id="lion" onclick="startImageCrawlling()"> 
+            <a href="{% url 'imgCrwalling' %}"> </a>
+        </div>
 
         <main role="main">
+
             <div class="top_cover">
                 <div id="top" class="center-block" style="background-image: url({% static 'kakao_top.png' %});">
 
@@ -31,25 +41,23 @@
             <div class="album py-5 bg-light">
                 <div class="container">
                     <div class="row">
-
-                        {% for portfolio in portfolios.all %}
-                        
+                        {% for portfolio in portfolios.all %}  
                         <div class="col-md-4">
                             <div class="card mb-4 shadow-sm">
-
                                 <img class="card-img-top" src="{{ portfolio.image.url }}" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h4> {{portfolio.title}}</h4>
-                                        <p class="card-text"> {{ portfolio.description }}</p>
-                                        <small class="text-muted">9 mins</small>
-                                    </div>
-
+                                <div class="card-body">
+                                    <h4> {{portfolio.title}}</h4>
+                                    <p class="card-text"> {{ portfolio.description }}</p>
+                                    <small class="text-muted">9 mins</small>
+                                </div>
                             </div>
                         </div>
                         {% endfor %}
                     </div>
+
                 </div>
             </div>
+
         </main>
     
         <footer class="text-muted">
@@ -70,8 +78,9 @@
                     <p> KAKAO FIRENDS BRAND SITE <a href="https://store.kakaofriends.com/kr/brand/home"> https://store.kakaofriends.com/kr/brand/home </a> </p>
                     <p> INTRO KHYST <a href="http://khyst.co.kr"> http://khyst.co.kr </a> </p>
                     <p> Crawlling through BeautifulSoup4, requests Package </p>
-
                 </div>
+
+  
                 
                 <script>
                     function fAssign() {
