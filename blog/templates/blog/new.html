@@ -47,8 +47,20 @@
                 <div class="row">
                 </div>
                 <div class="inputContent">
-                    <textarea id="editor" name="body"></textarea>
-                    <!--<textarea cols=80 rows=10 name="body" id="#editor"></textarea>-->
+                    <!--<textarea id="editor" name="editor"> Hello </textarea>-->
+
+                    <textarea name="content" id="editor">
+                        
+                    </textarea>
+
+                    <script>
+                        ClassicEditor
+                            .create( document.querySelector( '#editor' ) )
+                            .catch( error => {
+                                console.error( error );
+                            } );
+                    </script>
+
                 </div>
             </div>
 
@@ -69,38 +81,8 @@
 
         <div style="height:100px;">
         </div>
+
     </form>
-
-    {% load staticfiles %}
-
-    <script src="{% static 'ckeditor.js' %}"></script>
-	
-    <script src="{%static 'config.js' %}"> </script>
-
-    <script>
-        
-        //initSample();
-
-        var editor = CKEDITOR.replace( '#editor' ,
-        {height : 500});
-
-    
-        // ---------------------- !!ERROR!! 수정 필요 ----------------------
-        //editor.resize($(div).width(), '900px');
-        // The height value now applies to the editing area.
-        //editor.resize( '100%', '350', true )
-
-        //var div = document.getElementById('editor');
-
-        /*CKEDITOR.replace('#editor'), {  
-            height : 250;
-        } );*/
-        // ---------------------- !!ERROR!! 수정 필요 ----------------------
-
-
-
-
-    </script>
 
 
 {% endblock %}
