@@ -30,11 +30,13 @@ def imageCrawlling(request):
         for j in range(1,12):
             flag = 0
             if(j<10):
-                naming = str(year) + "0" + str(j)
+                month = "0" + str(j)
                 
             else:
-                naming = str(year) + str(j)
+                month = str(j)
 
+            naming = str(year) + month
+            
             url = "https://store.kakaofriends.com/kr/brand/wallpaper" + naming
                 
             print(url, "로 데이터 분석 시작")
@@ -58,15 +60,16 @@ def imageCrawlling(request):
             except:
                 print(' 파일이 존재 하지 않습니다.!')
                 if year == 2019 :
-                        break;
+                        return redirect('portfolio')
+                        break
             
             if flag == 1:
                 portfolios = Portfolio() #portfolio 객체 생성
                 img_url = imgRoute[list_num]['src']
                 content = urllib.request.urlopen(img_url)
 
-                portfolios.title = naming
-                portfolios.description = "KAKAO FRIENDS BACKGROUND"
+                portfolios.title = str(year) + "년 " + str(month) +"월 배경화면"
+                portfolios.description = "store.kakaofriends.com/kr/"
                 #portfolios.image("name", content)
                 portfolios.image.save(naming, content,save=True)
 

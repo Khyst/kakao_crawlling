@@ -33,6 +33,6 @@ urlpatterns = [
     path('signup/', account.views.signup, name='signup'),
     path('login/', account.views.login, name='login'),
     path('logout/', account.views.logout, name='logout'),
-    path('Updata/', portfolio.views.imageCrawlling, name="imgCrwalling"),
+    path('Update/', portfolio.views.imageCrawlling, name="imgCrwalling"),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
