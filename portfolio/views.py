@@ -39,26 +39,26 @@ def imageCrawlling(request):
             
             url = "https://store.kakaofriends.com/kr/brand/wallpaper" + naming
                 
-            print(url, "로 데이터 분석 시작")
-            print("====================================================================")
+            #print(url, "로 데이터 분석 시작")
+            #print("====================================================================")
             
             resObj = requests.get(url)
             soupObj = BeautifulSoup(resObj.text, "html.parser")
             imgRoute = soupObj.select("#mArticle > div > div:nth-child(2) > img")
-            print(imgRoute)
+            #print(imgRoute)
             
-            print('-----------------------------------------------------------------------------------------------------------')
+            #print('-----------------------------------------------------------------------------------------------------------')
 
             try:
                 for list_num in range(1):
-                        print(imgRoute[list_num]['src'])
+                        #print(imgRoute[list_num]['src'])
                         savename = "./portfolio/static/img/" + naming + '.jpg'
-                        print(savename)
+                        #print(savename)
                         urllib.request.urlretrieve(imgRoute[list_num]['src'], savename)
                         flag = 1
                         
             except:
-                print(' 파일이 존재 하지 않습니다.!')
+                #print(' 파일이 존재 하지 않습니다.!')
                 if year == 2019 :
                         return redirect('portfolio')
                         break
@@ -73,8 +73,9 @@ def imageCrawlling(request):
                 #portfolios.image("name", content)
                 portfolios.image.save(naming, content,save=True)
 
-            print("====================================================================")
+            ##print("====================================================================")
             
         year += 1
-
+    
+    print('End')
     return redirect('portfolio')
