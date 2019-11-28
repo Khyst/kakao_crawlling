@@ -1,1 +1,1 @@
-web: gunicorn blogProj.wsgi --timeout 200 --keep-alive 5 --log-level debug --log-file -
+web: gunicorn blogProj.wsgi --log-file -
