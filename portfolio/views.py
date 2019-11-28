@@ -42,9 +42,13 @@ def imageCrawlling(request):
             #print(url, "로 데이터 분석 시작")
             #print("====================================================================")
             
-            resObj = requests.get(url)
+            """resObj = requests.get(url)
             soupObj = BeautifulSoup(resObj.text, "html.parser")
-            imgRoute = soupObj.select("#mArticle > div > div:nth-child(2) > img")
+            imgRoute = soupObj.select("#mArticle > div > div:nth-child(2) > img")"""
+
+            #1pass
+            BeautifulSoup(requests.get(url), "html.parser").select("#mArticle > div > div:nth-child(2) > img")
+
             #print(imgRoute)
             
             #print('-----------------------------------------------------------------------------------------------------------')
@@ -52,9 +56,11 @@ def imageCrawlling(request):
             try:
                 for list_num in range(1):
                         #print(imgRoute[list_num]['src'])
-                        savename = "./portfolio/static/img/" + naming + '.jpg'
+                        #savename = "./portfolio/static/img/" + naming + '.jpg'
                         #print(savename)
-                        urllib.request.urlretrieve(imgRoute[list_num]['src'], savename)
+
+                        #1pass
+                        urllib.request.urlretrieve(imgRoute[list_num]['src'], "./portfolio/static/img/" + naming + '.jpg')
                         flag = 1
                         
             except:
@@ -65,16 +71,16 @@ def imageCrawlling(request):
             
             if flag == 1:
                 portfolios = Portfolio() #portfolio 객체 생성
-                img_url = imgRoute[list_num]['src']
-                content = urllib.request.urlopen(img_url)
+                #img_url = imgRoute[list_num]['src']
+
+                #1pass
+                content = urllib.request.urlopen(imgRoute[list_num]['src'])
 
                 portfolios.title = str(year) + "년 " + str(month) +"월 배경화면"
                 portfolios.description = "store.kakaofriends.com/kr/"
                 #portfolios.image("name", content)
                 portfolios.image.save(naming, content,save=True)
-
             ##print("====================================================================")
-            
         year += 1
     
     print('End')
