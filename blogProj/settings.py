@@ -27,7 +27,6 @@ DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
 #
 ALLOWED_HOSTS = [
-    'django-env.7xnfaghig9.us-west-2.elasticbeanstalk.com',
     '*',
 ]
 #
