@@ -24,11 +24,9 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '4%v-senx^1)p(&u70=f5b3*yk$nj*o
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
-
+ 
 #
-ALLOWED_HOSTS = [
-    '*',
-]
+ALLOWED_HOSTS = [ '*',]
 #
 
 
