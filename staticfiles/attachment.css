@@ -1,0 +1,75 @@
+/*
+card-img-top
+*/
+
+#top {
+    background-repeat: no-repeat;
+    background-size : 100% 100%;
+    height: 480px;
+    display: block;
+    margin : 0 auto;
+}
+
+.top_cover{
+    width: 100%;
+    height: 480px;
+}
+
+#lion {
+    background-repeat: no-repeat;
+    width: 100px;
+    height: auto;
+    background-size: contain;
+    position: fixed;
+    top: 1%;
+    left: 90%;
+    width: 100px; 
+    height:100px;
+    background-image: url('Koreapas.png'); 
+    cursor:grab;
+
+}
+
+.list-group {
+    border : none;
+}
+
+a.list-group-item {
+    color : white;
+    font-weight: bold;
+    opacity: 0.8;
+}
+
+.card-body{
+    position: absolute;
+    top: 10px;
+    opacity: 0;
+    transition:all .3s linear;
+    z-index: 99;
+}
+
+.show{
+    background-attachment: fixed;
+    background-color: rgba(255, 255, 255 0.5);
+    opacity: 1;
+}
+
+.card-whiteness{
+    position: absolute;
+    top:0;
+    left:0;
+    background-color:#ffffff;
+    width: 100% !important;
+    height: 218.22px !important;
+    transition:all .3s linear;
+    opacity: 0;
+}
+
+.show-whiteness{
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.card-img-top{
+    height:218.22px;
+}
