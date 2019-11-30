@@ -22,7 +22,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('', porfolio.views.home, name='home'), # views를 import함
+    path('', portfolio.views.home, name='home'), # views를 import함
     path('portfolio/', portfolio.views.portfolio, name='portfolio'),
     path('Update/', portfolio.views.imageCrawlling, name="imgCrwalling"),
 

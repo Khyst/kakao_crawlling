@@ -9,6 +9,9 @@ import urllib
 import urllib.request
 import requests
 
+def home(request):
+    return redirect('portfolio')
+
 def portfolio(request):
     portfolios = Portfolio.objects # 포트폴리오 model 객체
     return render(request, 'portfolio/portfolio.html',
