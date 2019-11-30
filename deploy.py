@@ -17,16 +17,16 @@ def log(s, is_error=False):
 
 class AskDjango(object):
     def run(self):
-        self.check_nodejs()
+        #self.check_nodejs()
         self.check_variables()
         self.do_deployment()
         self.copy_web_config()
         self.do_extra_for_django()
         self.post_python_deployment()
 
-    def check_nodejs(self):
+    """def check_nodejs(self):
         if int(os.system('where node')) != 0:
-            self.goto_error('Missing node.js executable, plaease install node.js, if already installed make sure it can be reached from current environment.')
+            self.goto_error('Missing node.js executable, plaease install node.js, if already installed make sure it can be reached from current environment.')"""
 
     def check_variables(self):
         log('check variables ...')
