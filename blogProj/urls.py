@@ -16,24 +16,14 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-import blog.views
 import portfolio.views
-import account.views
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', blog.views.home, name='home'), # views를 import함
-    path('blog/<int:blog_id>/', blog.views.detail, name='detail'),
-    path('intro/', blog.views.blog, name='intro'),
-    path('new/', blog.views.new, name='new'),
-    path('create/', blog.views.create, name='create'),
+    #path('', porfolio.views.home, name='home'), # views를 import함
     path('portfolio/', portfolio.views.portfolio, name='portfolio'),
-    path('signup/', account.views.signup, name='signup'),
-    path('login/', account.views.login, name='login'),
-    path('logout/', account.views.logout, name='logout'),
     path('Update/', portfolio.views.imageCrawlling, name="imgCrwalling"),
-    #path('download/(?P<file_name>.+)$/', portfolio.views.download, name="download"),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
