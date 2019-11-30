@@ -1,3 +1,6 @@
+/*
+card-img-top
+*/
 
 #top {
     background-repeat: no-repeat;
@@ -35,5 +38,38 @@ a.list-group-item {
     color : white;
     font-weight: bold;
     opacity: 0.8;
-    
+}
+
+.card-body{
+    position: absolute;
+    top: 10px;
+    opacity: 0;
+    transition:all .3s linear;
+    z-index: 99;
+}
+
+.show{
+    background-attachment: fixed;
+    background-color: rgba(255, 255, 255 0.5);
+    opacity: 1;
+}
+
+.card-whiteness{
+    position: absolute;
+    top:0;
+    left:0;
+    background-color:#ffffff;
+    width: 100% !important;
+    height: 218.22px !important;
+    transition:all .3s linear;
+    opacity: 0;
+}
+
+.show-whiteness{
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.card-img-top{
+    height:218.22px;
 }

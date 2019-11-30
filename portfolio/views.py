@@ -1,5 +1,6 @@
 #Django Basis Source
 from django.shortcuts import render, redirect
+from django.conf import settings
 from .models import Portfolio
 
 #Image Crawlling Module
@@ -8,22 +9,21 @@ import urllib
 import urllib.request
 import requests
 
-# Create your views here.
 def portfolio(request):
     portfolios = Portfolio.objects # 포트폴리오 model 객체
     return render(request, 'portfolio/portfolio.html',
     {'portfolios':portfolios}) # 객체 전달
 
-def imageCrawlling(request):
+def delete_portfolio():
+    
+    objects = Portfolio.objects
 
-    """img_url = "https://t1.kakaocdn.net/friends/prod/brand/201907_type1_2880.jpg"
-    content = urllib.request.urlopen(img_url)
+    for i in range(0, objects.count(), 1):
+        objects.get(img_id=i).delete()
+        #print('deletePortfolio', i)
 
-    portfolios.title = "savename"
-    portfolios.description = "KAKAO FRIENDS BACKGROUND"
-    #portfolios.image("name", content)
-    portfolios.image.save("name", content,save=True)"""
-
+def create_portfolio():
+    id_step = 0
     year = 2018
 
     while year <= 2019:
@@ -42,23 +42,12 @@ def imageCrawlling(request):
             #print(url, "로 데이터 분석 시작")
             #print("====================================================================")
             
-            """resObj = requests.get(url)
+            resObj = requests.get(url)
             soupObj = BeautifulSoup(resObj.text, "html.parser")
-            imgRoute = soupObj.select("#mArticle > div > div:nth-child(2) > img")"""
-
-            #1pass
-            BeautifulSoup(requests.get(url), "html.parser").select("#mArticle > div > div:nth-child(2) > img")
-
-            #print(imgRoute)
-            
-            #print('-----------------------------------------------------------------------------------------------------------')
+            imgRoute = soupObj.select("#mArticle > div > div:nth-child(2) > img")
 
             try:
                 for list_num in range(1):
-                        #print(imgRoute[list_num]['src'])
-                        #savename = "./portfolio/static/img/" + naming + '.jpg'
-                        #print(savename)
-
                         #1pass
                         urllib.request.urlretrieve(imgRoute[list_num]['src'], "./portfolio/static/img/" + naming + '.jpg')
                         flag = 1
@@ -75,13 +64,19 @@ def imageCrawlling(request):
 
                 #1pass
                 content = urllib.request.urlopen(imgRoute[list_num]['src'])
-
+                portfolios.img_id = id_step
                 portfolios.title = str(year) + "년 " + str(month) +"월 배경화면"
                 portfolios.description = "store.kakaofriends.com/kr/"
                 #portfolios.image("name", content)
-                portfolios.image.save(naming, content,save=True)
+                portfolios.image.save(naming + '.jpg', content,save=True)
+                id_step += 1
             ##print("====================================================================")
         year += 1
-    
-    print('End')
+
+def imageCrawlling(request):
+
+    delete_portfolio()
+
+    create_portfolio()
+
     return redirect('portfolio')

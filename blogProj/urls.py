@@ -34,5 +34,6 @@ urlpatterns = [
     path('login/', account.views.login, name='login'),
     path('logout/', account.views.logout, name='logout'),
     path('Update/', portfolio.views.imageCrawlling, name="imgCrwalling"),
+    #path('download/(?P<file_name>.+)$/', portfolio.views.download, name="download"),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
