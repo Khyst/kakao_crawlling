@@ -3,7 +3,7 @@ import os
 
 PYTHON_VERSION = '3.6'
 
-assert(PYTHON_VERSION in ('3.6', '2.7'))
+assert(PYTHON_VERSION in ('3.6'))
 
 
 # 가상환경을 env 디렉토리에 이미 생성하셨다면, True로 설정해주세요.
