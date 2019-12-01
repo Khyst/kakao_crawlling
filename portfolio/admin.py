@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Portfolio
+from .models import Portfolio, portfolioKey
 #from rangefilter.filter import DateRangeFilter, DateTimeRangeFilter  # 모듈 불러오기
 
 
@@ -18,4 +18,5 @@ admin.site.register(Portfolio, PortfolioAdmin)
 """
 
 admin.site.register(Portfolio)
+admin.site.register(portfolioKey)
 

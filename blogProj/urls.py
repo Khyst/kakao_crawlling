@@ -25,5 +25,8 @@ urlpatterns = [
     path('', portfolio.views.home, name='home'), # views를 import함
     path('portfolio/', portfolio.views.portfolio, name='portfolio'),
     path('Update/', portfolio.views.imageCrawlling, name="imgCrwalling"),
+    path('Delete/ <int:delete_id>', portfolio.views.delete_single_portfolio, name='custom_delete'),
+    path('delete_all/', portfolio.views.delete_portfolio, name='deleteAll'),
+    path('initial/', portfolio.views.initializer, name='initial'),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
