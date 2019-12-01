@@ -121,11 +121,12 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'portfolio', 'static'),
 ]
+
+STATIC_URL = '/static/'
 # static 파일들을 사용하기 위해, 위치 지정
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
