@@ -61,7 +61,7 @@ numba==0.46.0
 numpy==1.17.3
 opencv-python==4.1.1.26
 pandocfilters==1.4.2
-paramiko==2.6.0
+paramiko==2.10.1
 parso==0.5.1
 pathspec==0.5.9
 pickleshare==0.7.5
